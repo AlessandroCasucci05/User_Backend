@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=basic-db
+      - POSTGRES_PASSWORD=florence_consulting
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
